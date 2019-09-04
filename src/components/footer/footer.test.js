@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 describe('Footer', () => {
   it('should contain navigation element', () => {
     const wrapper = shallow(<Footer />);
+    
     expect(wrapper.find('nav')).to.have.length(1)
   });
 
