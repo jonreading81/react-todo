@@ -15,6 +15,5 @@ export default ({children}) => (
     <main>
       {children}
     </main>
-    <Footer />
   </div>
 );

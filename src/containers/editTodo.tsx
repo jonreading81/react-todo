@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TodoForm from '../components/todoForm/reduxForm';
+import TodoForm from '../components/todoForm/edit';
 import { editTodo, IEditTodoActionCreator } from '../redux/actions/todos';
 import {ITodo, IReduxStore} from '../types'
 import {

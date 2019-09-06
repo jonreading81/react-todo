@@ -2,16 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import List from '../components/todoList';
 import { IReduxStore, ITodo } from '../types';
-import {IDeleteTodoActionCreator, deleteTodo} from '../redux/actions/todos';
+import {IDeleteTodoActionCreator, IAddTodoActionCreator, deleteTodo, addTodo} from '../redux/actions/todos';
+import TodoForm from '../components/todoForm/add';
 
 interface ITodoListProps {
   todos: Array <ITodo>
-  deleteTodo: IDeleteTodoActionCreator
+  deleteTodo: IDeleteTodoActionCreator,
+  addTodo: IAddTodoActionCreator,
 };
 
 const TodoList = (props: ITodoListProps) => (
   <div id="todo-list">
     <h2>Todo List</h2>
+    <TodoForm onSubmit={props.addTodo} />
     <List items={props.todos} deleteItem={props.deleteTodo}/>
   </div>
 );
@@ -21,7 +24,8 @@ const mapStateToProps = (state : IReduxStore)  => ({
 });
 
 const mapDispatchToProps = {
-  deleteTodo
+  deleteTodo,
+  addTodo,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
