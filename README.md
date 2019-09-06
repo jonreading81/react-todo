@@ -1,6 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Simple example todo app
+Simple example todo app to demonstrate using latest technologies:
+
+##React
+##Redux
+##Redux saga
+##Typescript
 
 ## Available Scripts
 

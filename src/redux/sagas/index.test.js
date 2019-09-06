@@ -10,6 +10,13 @@ describe('rootSaga', () => {
       .dispatch({ type: 'TODO_ADD' })
       .run();
   });
+
+  it('editing a todo should push to the home page', () => {
+    return expectSaga(rootSaga)
+      .put(push('/'))
+      .dispatch({ type: 'TODO_EDIT' })
+      .run();
+  });
 })
 
 

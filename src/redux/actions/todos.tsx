@@ -11,13 +11,16 @@ export interface ITodoAddPayload {
   description: string
 };
 
-export interface ITodoIdPayload {
-  id: number
-};
-
 export interface IAddTodoAction {
   type: TODO_ADD,
   payload: ITodoAddPayload
+};
+
+export type IAddTodoActionCreator = (data: ITodoAddPayload) => IAddTodoAction;
+
+
+export interface ITodoIdPayload {
+  id: number
 };
 
 export interface IDeleteTodoAction {
@@ -25,26 +28,30 @@ export interface IDeleteTodoAction {
   payload: ITodoIdPayload
 }
 
+export type IDeleteTodoActionCreator = (id: number) => IDeleteTodoAction;
+
 export interface IEditTodoAction {
   type: TODO_EDIT,
   payload: ITodo
 }
 
-export const addTodo = (data: ITodoAddPayload) : IAddTodoAction => ({
+export type IEditTodoActionCreator = (todo: ITodo) => IEditTodoAction;
+
+export const addTodo: IAddTodoActionCreator = data => ({
   type:TODO_ADD,
   payload: data
 });
 
-export const deleteTodo = (id: number) : IDeleteTodoAction => ({
+export const deleteTodo: IDeleteTodoActionCreator =  id  => ({
   type:TODO_DELETE,
   payload: {
     id,
   }
 });
 
-export const editTodo = (payload: ITodo) : IEditTodoAction => ({
+export const editTodo: IEditTodoActionCreator = todo => ({
   type:TODO_EDIT,
-  payload: payload
+  payload: todo
 });
 
 

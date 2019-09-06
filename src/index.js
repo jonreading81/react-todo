@@ -7,6 +7,7 @@ import configureStore, { history } from './redux/store';
 import App from './App';
 import TodoList from './containers/todoList';
 import AddTodo from './containers/addTodo';
+import EditTodo from './containers/editTodo';
 
 const store = configureStore({});
 const rootElement = document.getElementById('root');
@@ -16,8 +17,9 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <App>
           <Switch>
-              <Route exact path="/" render={() => (<TodoList />)} />
-              <Route exact path="/add" render={() => (<AddTodo />)} />
+              <Route exact path="/" component={TodoList} />
+              <Route exact path="/add" component={AddTodo} />
+              <Route exact path="/edit/:id" component={EditTodo} />
               <Route render={() => (<div>Not Found</div>)} />
             </Switch>
         </App>
