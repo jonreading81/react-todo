@@ -7,7 +7,7 @@ function* todoAdded() {
 }
 
 function* watchTodoAdd() {
-  yield takeEvery('TODO_ADD', todoAdded)
+  yield takeEvery(TODO_ADD, todoAdded)
 }
 
 export {

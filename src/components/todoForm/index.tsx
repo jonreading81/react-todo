@@ -1,7 +1,11 @@
 import React from 'react';
-import { Field } from 'redux-form'
+import { Field } from 'redux-form';
 
-export default ({handleSubmit}) => (
+interface ITodoFormProps {
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+};
+
+const TodoForm: React.SFC <ITodoFormProps> = ({handleSubmit}) => (
   <form onSubmit={handleSubmit}>
      <div>
         <label htmlFor="name">Name</label>
@@ -10,5 +14,7 @@ export default ({handleSubmit}) => (
       <button type="submit">Submit</button>
   </form>
 );
+
+export default TodoForm;
 
 
