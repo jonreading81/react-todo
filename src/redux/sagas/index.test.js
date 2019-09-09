@@ -2,11 +2,12 @@ import { call, put, take } from 'redux-saga/effects';
 import { expectSaga } from 'redux-saga-test-plan';
 import rootSaga from './index';
 import { push } from 'connected-react-router';
+import {reset} from 'redux-form';
 
 describe('rootSaga', () => {
-  it('Adding a todo should push to the home page', () => {
+  it('Adding a todo should reset the form', () => {
     return expectSaga(rootSaga)
-      .put(push('/'))
+      .put(resetForm('add-form'))
       .dispatch({ type: 'TODO_ADD' })
       .run();
   });

@@ -1,0 +1,27 @@
+form {
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  input, textarea, button {
+    width:100%;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 1rem;
+    background: #8FE6BD;
+    padding:0.5rem;
+    border:none;
+    transition: background 400ms;
+    &:hover {
+      background: darken(#8FE6BD, 10%);
+    }
+    cursor: pointer;
+
+  }
+}
+.field {
+  display: block;
+
+}

@@ -1,0 +1,19 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+  li {
+    background: lighten(#F5F5F2, 10%);
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #9999;
+    position: relative;
+  }
+  i {
+    position: absolute;
+    right: 1rem;
+    top:1rem;
+    cursor: pointer;
+  }
+}

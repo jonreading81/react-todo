@@ -7,6 +7,7 @@ import configureStore, { history } from './redux/store';
 import App from './App';
 import TodoList from './containers/todoList';
 import EditTodo from './containers/editTodo';
+import './scss/main.scss';
 
 const store = configureStore({});
 const rootElement = document.getElementById('root');

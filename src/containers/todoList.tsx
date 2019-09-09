@@ -13,7 +13,6 @@ interface ITodoListProps {
 
 const TodoList = (props: ITodoListProps) => (
   <div id="todo-list">
-    <h2>Todo List</h2>
     <TodoForm onSubmit={props.addTodo} />
     <List items={props.todos} deleteItem={props.deleteTodo}/>
   </div>
